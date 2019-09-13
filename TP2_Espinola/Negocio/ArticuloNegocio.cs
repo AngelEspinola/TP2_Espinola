@@ -76,32 +76,33 @@ namespace Negocio
             }
         }
 
-        //public void agregarArticulo(Articulo nuevo)
-        //{
-        //    SqlConnection conexion = new SqlConnection();
-        //    SqlCommand comando = new SqlCommand();
-        //    try
-        //    {
-        //        conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
-        //        comando.CommandType = System.Data.CommandType.Text;
-        //        //MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
-        //        comando.CommandText = "insert into PERSONAJES (Nombre, Debilidad, UsaCapa, Volador, IdUniverso) values";
-        //        comando.CommandText += "('" + nuevo.Nombre + "', '" + nuevo.Debilidad + "', '" + nuevo.UsaCapa.ToString() + "', '" + nuevo.Volador.ToString() + "'," + nuevo.Universo.Id.ToString() + ")";
-        //        comando.Connection = conexion;
-        //        conexion.Open();
+        public void agregarArticulo(Articulo nuevo)
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            try
+            {
+                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                comando.CommandType = System.Data.CommandType.Text;
+                //MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
+                comando.CommandText = "insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) values";
+                comando.CommandText += "('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', " +
+                    nuevo.Marca.Id + "," + nuevo.Categoria.Id + "," + nuevo.Precio + ")";
+                comando.Connection = conexion;
+                conexion.Open();
 
-        //        comando.ExecuteNonQuery();
+                comando.ExecuteNonQuery();
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        conexion.Close();
-        //    }
-        //}
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
 
         //public void modificarHeroe(Heroe modificar)
         //{

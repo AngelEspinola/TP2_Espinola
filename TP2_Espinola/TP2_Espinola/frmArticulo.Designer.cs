@@ -28,151 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lp_lblEdad = new System.Windows.Forms.Label();
-            this.lp_cbxMusicaPref6 = new System.Windows.Forms.CheckBox();
-            this.lp_cbxMusicaPref5 = new System.Windows.Forms.CheckBox();
-            this.lp_cbxMusicaPref4 = new System.Windows.Forms.CheckBox();
-            this.lp_cbxMusicaPref3 = new System.Windows.Forms.CheckBox();
-            this.lp_cbxMusicaPref2 = new System.Windows.Forms.CheckBox();
-            this.lp_lblColorFav = new System.Windows.Forms.Label();
-            this.lp_lblMusicaPref = new System.Windows.Forms.Label();
-            this.lp_lblFecNac = new System.Windows.Forms.Label();
-            this.lp_lblNombre = new System.Windows.Forms.Label();
-            this.lp_lblApellido = new System.Windows.Forms.Label();
-            this.lp_cbColorFav = new System.Windows.Forms.ComboBox();
-            this.lp_cbxMusicaPref1 = new System.Windows.Forms.CheckBox();
-            this.lp_gbxSexo = new System.Windows.Forms.GroupBox();
-            this.lp_rbxMasculino = new System.Windows.Forms.RadioButton();
-            this.lp_rbxFemenino = new System.Windows.Forms.RadioButton();
-            this.lp_dtpFechaNac = new System.Windows.Forms.DateTimePicker();
-            this.lp_txtNombre = new System.Windows.Forms.TextBox();
-            this.lp_txtApellido = new System.Windows.Forms.TextBox();
-            this.lp_btnEliminar = new System.Windows.Forms.Button();
-            this.lp_btnModificar = new System.Windows.Forms.Button();
-            this.lp_btnCancelar = new System.Windows.Forms.Button();
-            this.lp_btnAgregar = new System.Windows.Forms.Button();
-            this.lp_gbxSexo.SuspendLayout();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.cbxMarca = new System.Windows.Forms.ComboBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.cbxCategoria = new System.Windows.Forms.ComboBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.lblPrecio = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lp_lblEdad
+            // lblDescripcion
             // 
-            this.lp_lblEdad.AutoSize = true;
-            this.lp_lblEdad.Location = new System.Drawing.Point(415, 33);
-            this.lp_lblEdad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lp_lblEdad.Name = "lp_lblEdad";
-            this.lp_lblEdad.Size = new System.Drawing.Size(38, 13);
-            this.lp_lblEdad.TabIndex = 62;
-            this.lp_lblEdad.Text = "Edad :";
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(32, 123);
+            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcion.TabIndex = 56;
+            this.lblDescripcion.Text = "Descripcion";
             // 
-            // lp_cbxMusicaPref6
+            // lblNombre
             // 
-            this.lp_cbxMusicaPref6.AutoSize = true;
-            this.lp_cbxMusicaPref6.Location = new System.Drawing.Point(616, 110);
-            this.lp_cbxMusicaPref6.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_cbxMusicaPref6.Name = "lp_cbxMusicaPref6";
-            this.lp_cbxMusicaPref6.Size = new System.Drawing.Size(79, 17);
-            this.lp_cbxMusicaPref6.TabIndex = 61;
-            this.lp_cbxMusicaPref6.Text = "Electronica";
-            this.lp_cbxMusicaPref6.UseVisualStyleBackColor = true;
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(51, 74);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 53;
+            this.lblNombre.Text = "Nombre";
             // 
-            // lp_cbxMusicaPref5
+            // lblCodigo
             // 
-            this.lp_cbxMusicaPref5.AutoSize = true;
-            this.lp_cbxMusicaPref5.Location = new System.Drawing.Point(616, 85);
-            this.lp_cbxMusicaPref5.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_cbxMusicaPref5.Name = "lp_cbxMusicaPref5";
-            this.lp_cbxMusicaPref5.Size = new System.Drawing.Size(61, 17);
-            this.lp_cbxMusicaPref5.TabIndex = 60;
-            this.lp_cbxMusicaPref5.Text = "Cumbia";
-            this.lp_cbxMusicaPref5.UseVisualStyleBackColor = true;
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(55, 25);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
+            this.lblCodigo.TabIndex = 52;
+            this.lblCodigo.Text = "Codigo";
             // 
-            // lp_cbxMusicaPref4
+            // cbxMarca
             // 
-            this.lp_cbxMusicaPref4.AutoSize = true;
-            this.lp_cbxMusicaPref4.Location = new System.Drawing.Point(616, 59);
-            this.lp_cbxMusicaPref4.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_cbxMusicaPref4.Name = "lp_cbxMusicaPref4";
-            this.lp_cbxMusicaPref4.Size = new System.Drawing.Size(47, 17);
-            this.lp_cbxMusicaPref4.TabIndex = 59;
-            this.lp_cbxMusicaPref4.Text = "Jazz";
-            this.lp_cbxMusicaPref4.UseVisualStyleBackColor = true;
-            // 
-            // lp_cbxMusicaPref3
-            // 
-            this.lp_cbxMusicaPref3.AutoSize = true;
-            this.lp_cbxMusicaPref3.Location = new System.Drawing.Point(524, 112);
-            this.lp_cbxMusicaPref3.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_cbxMusicaPref3.Name = "lp_cbxMusicaPref3";
-            this.lp_cbxMusicaPref3.Size = new System.Drawing.Size(79, 17);
-            this.lp_cbxMusicaPref3.TabIndex = 58;
-            this.lp_cbxMusicaPref3.Text = "Academica";
-            this.lp_cbxMusicaPref3.UseVisualStyleBackColor = true;
-            // 
-            // lp_cbxMusicaPref2
-            // 
-            this.lp_cbxMusicaPref2.AutoSize = true;
-            this.lp_cbxMusicaPref2.Location = new System.Drawing.Point(524, 84);
-            this.lp_cbxMusicaPref2.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_cbxMusicaPref2.Name = "lp_cbxMusicaPref2";
-            this.lp_cbxMusicaPref2.Size = new System.Drawing.Size(52, 17);
-            this.lp_cbxMusicaPref2.TabIndex = 57;
-            this.lp_cbxMusicaPref2.Text = "Rock";
-            this.lp_cbxMusicaPref2.UseVisualStyleBackColor = true;
-            // 
-            // lp_lblColorFav
-            // 
-            this.lp_lblColorFav.AutoSize = true;
-            this.lp_lblColorFav.Location = new System.Drawing.Point(55, 101);
-            this.lp_lblColorFav.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lp_lblColorFav.Name = "lp_lblColorFav";
-            this.lp_lblColorFav.Size = new System.Drawing.Size(72, 13);
-            this.lp_lblColorFav.TabIndex = 56;
-            this.lp_lblColorFav.Text = "Color Favorito";
-            // 
-            // lp_lblMusicaPref
-            // 
-            this.lp_lblMusicaPref.AutoSize = true;
-            this.lp_lblMusicaPref.Location = new System.Drawing.Point(553, 33);
-            this.lp_lblMusicaPref.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lp_lblMusicaPref.Name = "lp_lblMusicaPref";
-            this.lp_lblMusicaPref.Size = new System.Drawing.Size(86, 13);
-            this.lp_lblMusicaPref.TabIndex = 55;
-            this.lp_lblMusicaPref.Text = "Musica Preferida";
-            // 
-            // lp_lblFecNac
-            // 
-            this.lp_lblFecNac.AutoSize = true;
-            this.lp_lblFecNac.Location = new System.Drawing.Point(271, 33);
-            this.lp_lblFecNac.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lp_lblFecNac.Name = "lp_lblFecNac";
-            this.lp_lblFecNac.Size = new System.Drawing.Size(108, 13);
-            this.lp_lblFecNac.TabIndex = 54;
-            this.lp_lblFecNac.Text = "Fecha de Nacimiento";
-            // 
-            // lp_lblNombre
-            // 
-            this.lp_lblNombre.AutoSize = true;
-            this.lp_lblNombre.Location = new System.Drawing.Point(55, 63);
-            this.lp_lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lp_lblNombre.Name = "lp_lblNombre";
-            this.lp_lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lp_lblNombre.TabIndex = 53;
-            this.lp_lblNombre.Text = "Nombre";
-            // 
-            // lp_lblApellido
-            // 
-            this.lp_lblApellido.AutoSize = true;
-            this.lp_lblApellido.Location = new System.Drawing.Point(55, 23);
-            this.lp_lblApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lp_lblApellido.Name = "lp_lblApellido";
-            this.lp_lblApellido.Size = new System.Drawing.Size(44, 13);
-            this.lp_lblApellido.TabIndex = 52;
-            this.lp_lblApellido.Text = "Apellido";
-            // 
-            // lp_cbColorFav
-            // 
-            this.lp_cbColorFav.FormattingEnabled = true;
-            this.lp_cbColorFav.Items.AddRange(new object[] {
+            this.cbxMarca.FormattingEnabled = true;
+            this.cbxMarca.Items.AddRange(new object[] {
             "Azul",
             "Azul Cielo",
             "Azul Marino",
@@ -180,183 +86,166 @@
             "Azul Acero",
             "Azul Cian",
             "Azul Klein"});
-            this.lp_cbColorFav.Location = new System.Drawing.Point(58, 118);
-            this.lp_cbColorFav.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_cbColorFav.Name = "lp_cbColorFav";
-            this.lp_cbColorFav.Size = new System.Drawing.Size(188, 21);
-            this.lp_cbColorFav.TabIndex = 51;
+            this.cbxMarca.Location = new System.Drawing.Point(108, 169);
+            this.cbxMarca.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxMarca.Name = "cbxMarca";
+            this.cbxMarca.Size = new System.Drawing.Size(212, 21);
+            this.cbxMarca.TabIndex = 51;
             // 
-            // lp_cbxMusicaPref1
+            // txtNombre
             // 
-            this.lp_cbxMusicaPref1.AutoSize = true;
-            this.lp_cbxMusicaPref1.Location = new System.Drawing.Point(524, 59);
-            this.lp_cbxMusicaPref1.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_cbxMusicaPref1.Name = "lp_cbxMusicaPref1";
-            this.lp_cbxMusicaPref1.Size = new System.Drawing.Size(62, 17);
-            this.lp_cbxMusicaPref1.TabIndex = 50;
-            this.lp_cbxMusicaPref1.Text = "Popular";
-            this.lp_cbxMusicaPref1.UseVisualStyleBackColor = true;
+            this.txtNombre.Location = new System.Drawing.Point(108, 71);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(212, 20);
+            this.txtNombre.TabIndex = 47;
             // 
-            // lp_gbxSexo
+            // txtCodigo
             // 
-            this.lp_gbxSexo.Controls.Add(this.lp_rbxMasculino);
-            this.lp_gbxSexo.Controls.Add(this.lp_rbxFemenino);
-            this.lp_gbxSexo.Location = new System.Drawing.Point(274, 92);
-            this.lp_gbxSexo.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_gbxSexo.Name = "lp_gbxSexo";
-            this.lp_gbxSexo.Padding = new System.Windows.Forms.Padding(2);
-            this.lp_gbxSexo.Size = new System.Drawing.Size(204, 44);
-            this.lp_gbxSexo.TabIndex = 49;
-            this.lp_gbxSexo.TabStop = false;
-            this.lp_gbxSexo.Text = "Sexo";
+            this.txtCodigo.Location = new System.Drawing.Point(108, 22);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(212, 20);
+            this.txtCodigo.TabIndex = 46;
             // 
-            // lp_rbxMasculino
+            // btnLimpiar
             // 
-            this.lp_rbxMasculino.AutoSize = true;
-            this.lp_rbxMasculino.Location = new System.Drawing.Point(105, 16);
-            this.lp_rbxMasculino.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_rbxMasculino.Name = "lp_rbxMasculino";
-            this.lp_rbxMasculino.Size = new System.Drawing.Size(73, 17);
-            this.lp_rbxMasculino.TabIndex = 4;
-            this.lp_rbxMasculino.TabStop = true;
-            this.lp_rbxMasculino.Text = "Masculino";
-            this.lp_rbxMasculino.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Location = new System.Drawing.Point(129, 334);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(119, 34);
+            this.btnLimpiar.TabIndex = 66;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // lp_rbxFemenino
+            // btnCancelar
             // 
-            this.lp_rbxFemenino.AutoSize = true;
-            this.lp_rbxFemenino.Location = new System.Drawing.Point(20, 16);
-            this.lp_rbxFemenino.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_rbxFemenino.Name = "lp_rbxFemenino";
-            this.lp_rbxFemenino.Size = new System.Drawing.Size(71, 17);
-            this.lp_rbxFemenino.TabIndex = 3;
-            this.lp_rbxFemenino.TabStop = true;
-            this.lp_rbxFemenino.Text = "Femenino";
-            this.lp_rbxFemenino.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(252, 334);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(109, 34);
+            this.btnCancelar.TabIndex = 64;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // lp_dtpFechaNac
+            // btnAgregar
             // 
-            this.lp_dtpFechaNac.Location = new System.Drawing.Point(274, 56);
-            this.lp_dtpFechaNac.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_dtpFechaNac.Name = "lp_dtpFechaNac";
-            this.lp_dtpFechaNac.Size = new System.Drawing.Size(224, 20);
-            this.lp_dtpFechaNac.TabIndex = 48;
+            this.btnAgregar.Location = new System.Drawing.Point(10, 334);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(115, 34);
+            this.btnAgregar.TabIndex = 63;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // lp_txtNombre
+            // txtDescripcion
             // 
-            this.lp_txtNombre.Location = new System.Drawing.Point(58, 78);
-            this.lp_txtNombre.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_txtNombre.Name = "lp_txtNombre";
-            this.lp_txtNombre.Size = new System.Drawing.Size(188, 20);
-            this.lp_txtNombre.TabIndex = 47;
+            this.txtDescripcion.Location = new System.Drawing.Point(108, 120);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(212, 20);
+            this.txtDescripcion.TabIndex = 67;
             // 
-            // lp_txtApellido
+            // lblMarca
             // 
-            this.lp_txtApellido.Location = new System.Drawing.Point(58, 38);
-            this.lp_txtApellido.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_txtApellido.Name = "lp_txtApellido";
-            this.lp_txtApellido.Size = new System.Drawing.Size(188, 20);
-            this.lp_txtApellido.TabIndex = 46;
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(58, 172);
+            this.lblMarca.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(37, 13);
+            this.lblMarca.TabIndex = 68;
+            this.lblMarca.Text = "Marca";
             // 
-            // lp_btnEliminar
+            // lblCategoria
             // 
-            this.lp_btnEliminar.Location = new System.Drawing.Point(509, 344);
-            this.lp_btnEliminar.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_btnEliminar.Name = "lp_btnEliminar";
-            this.lp_btnEliminar.Size = new System.Drawing.Size(119, 34);
-            this.lp_btnEliminar.TabIndex = 66;
-            this.lp_btnEliminar.Text = "Eliminar";
-            this.lp_btnEliminar.UseVisualStyleBackColor = true;
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(43, 222);
+            this.lblCategoria.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(52, 13);
+            this.lblCategoria.TabIndex = 70;
+            this.lblCategoria.Text = "Categoria";
             // 
-            // lp_btnModificar
+            // cbxCategoria
             // 
-            this.lp_btnModificar.Location = new System.Drawing.Point(389, 344);
-            this.lp_btnModificar.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_btnModificar.Name = "lp_btnModificar";
-            this.lp_btnModificar.Size = new System.Drawing.Size(116, 34);
-            this.lp_btnModificar.TabIndex = 65;
-            this.lp_btnModificar.Text = "Modificar";
-            this.lp_btnModificar.UseVisualStyleBackColor = true;
+            this.cbxCategoria.FormattingEnabled = true;
+            this.cbxCategoria.Items.AddRange(new object[] {
+            "Azul",
+            "Azul Cielo",
+            "Azul Marino",
+            "Azul Celeste",
+            "Azul Acero",
+            "Azul Cian",
+            "Azul Klein"});
+            this.cbxCategoria.Location = new System.Drawing.Point(108, 219);
+            this.cbxCategoria.Margin = new System.Windows.Forms.Padding(2);
+            this.cbxCategoria.Name = "cbxCategoria";
+            this.cbxCategoria.Size = new System.Drawing.Size(212, 21);
+            this.cbxCategoria.TabIndex = 69;
             // 
-            // lp_btnCancelar
+            // txtPrecio
             // 
-            this.lp_btnCancelar.Location = new System.Drawing.Point(275, 344);
-            this.lp_btnCancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_btnCancelar.Name = "lp_btnCancelar";
-            this.lp_btnCancelar.Size = new System.Drawing.Size(109, 34);
-            this.lp_btnCancelar.TabIndex = 64;
-            this.lp_btnCancelar.Text = "Cancelar";
-            this.lp_btnCancelar.UseVisualStyleBackColor = true;
+            this.txtPrecio.Location = new System.Drawing.Point(108, 269);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(212, 20);
+            this.txtPrecio.TabIndex = 72;
             // 
-            // lp_btnAgregar
+            // lblPrecio
             // 
-            this.lp_btnAgregar.Location = new System.Drawing.Point(157, 344);
-            this.lp_btnAgregar.Margin = new System.Windows.Forms.Padding(2);
-            this.lp_btnAgregar.Name = "lp_btnAgregar";
-            this.lp_btnAgregar.Size = new System.Drawing.Size(115, 34);
-            this.lp_btnAgregar.TabIndex = 63;
-            this.lp_btnAgregar.Text = "Agregar";
-            this.lp_btnAgregar.UseVisualStyleBackColor = true;
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(58, 272);
+            this.lblPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(37, 13);
+            this.lblPrecio.TabIndex = 71;
+            this.lblPrecio.Text = "Precio";
             // 
             // frmArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lp_btnEliminar);
-            this.Controls.Add(this.lp_btnModificar);
-            this.Controls.Add(this.lp_btnCancelar);
-            this.Controls.Add(this.lp_btnAgregar);
-            this.Controls.Add(this.lp_lblEdad);
-            this.Controls.Add(this.lp_cbxMusicaPref6);
-            this.Controls.Add(this.lp_cbxMusicaPref5);
-            this.Controls.Add(this.lp_cbxMusicaPref4);
-            this.Controls.Add(this.lp_cbxMusicaPref3);
-            this.Controls.Add(this.lp_cbxMusicaPref2);
-            this.Controls.Add(this.lp_lblColorFav);
-            this.Controls.Add(this.lp_lblMusicaPref);
-            this.Controls.Add(this.lp_lblFecNac);
-            this.Controls.Add(this.lp_lblNombre);
-            this.Controls.Add(this.lp_lblApellido);
-            this.Controls.Add(this.lp_cbColorFav);
-            this.Controls.Add(this.lp_cbxMusicaPref1);
-            this.Controls.Add(this.lp_gbxSexo);
-            this.Controls.Add(this.lp_dtpFechaNac);
-            this.Controls.Add(this.lp_txtNombre);
-            this.Controls.Add(this.lp_txtApellido);
+            this.ClientSize = new System.Drawing.Size(395, 385);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.lblPrecio);
+            this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.cbxCategoria);
+            this.Controls.Add(this.lblMarca);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.lblDescripcion);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.lblCodigo);
+            this.Controls.Add(this.cbxMarca);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtCodigo);
             this.Name = "frmArticulo";
             this.Text = "frmArticulo";
-            this.lp_gbxSexo.ResumeLayout(false);
-            this.lp_gbxSexo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lp_lblEdad;
-        private System.Windows.Forms.CheckBox lp_cbxMusicaPref6;
-        private System.Windows.Forms.CheckBox lp_cbxMusicaPref5;
-        private System.Windows.Forms.CheckBox lp_cbxMusicaPref4;
-        private System.Windows.Forms.CheckBox lp_cbxMusicaPref3;
-        private System.Windows.Forms.CheckBox lp_cbxMusicaPref2;
-        private System.Windows.Forms.Label lp_lblColorFav;
-        private System.Windows.Forms.Label lp_lblMusicaPref;
-        private System.Windows.Forms.Label lp_lblFecNac;
-        private System.Windows.Forms.Label lp_lblNombre;
-        private System.Windows.Forms.Label lp_lblApellido;
-        private System.Windows.Forms.ComboBox lp_cbColorFav;
-        private System.Windows.Forms.CheckBox lp_cbxMusicaPref1;
-        private System.Windows.Forms.GroupBox lp_gbxSexo;
-        private System.Windows.Forms.RadioButton lp_rbxMasculino;
-        private System.Windows.Forms.RadioButton lp_rbxFemenino;
-        private System.Windows.Forms.DateTimePicker lp_dtpFechaNac;
-        private System.Windows.Forms.TextBox lp_txtNombre;
-        private System.Windows.Forms.TextBox lp_txtApellido;
-        private System.Windows.Forms.Button lp_btnEliminar;
-        private System.Windows.Forms.Button lp_btnModificar;
-        private System.Windows.Forms.Button lp_btnCancelar;
-        private System.Windows.Forms.Button lp_btnAgregar;
+        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.ComboBox cbxMarca;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.ComboBox cbxCategoria;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.Label lblPrecio;
     }
 }
