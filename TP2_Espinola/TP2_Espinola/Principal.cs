@@ -26,19 +26,37 @@ namespace TP2_Espinola
         private void btn_agregar_Click(object sender, EventArgs e)
         {
             frmArticulo nuevoFrm = new frmArticulo();
-            nuevoFrm.Show();
+            nuevoFrm.ShowDialog();
+            cargarGrilla();
         }
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
-            frmArticulo nuevoFrm = new frmArticulo();
+            frmArticulo nuevoFrm = new frmArticulo((Articulo)dgv_listaArticulos.CurrentRow.DataBoundItem);
             nuevoFrm.Show();
+            cargarGrilla();
         }
 
         private void Principal_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio articulos = new ArticuloNegocio();
-            dgv_listaArticulos.DataSource = articulos.listarArticulos();
+            cargarGrilla();
         }
+        private void cargarGrilla()
+        {
+            ArticuloNegocio articulos = new ArticuloNegocio();
+            try
+            {
+                listapersonas = articulos.listarArticulos();
+                dgv_listaArticulos.DataSource = articulos.listarArticulos();
+                //.Columns[4].Visible = false;
+                //.Columns[5].Visible = false;
+                //.Columns[5].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
     }
 }

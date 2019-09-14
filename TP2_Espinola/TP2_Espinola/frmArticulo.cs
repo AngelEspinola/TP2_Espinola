@@ -14,9 +14,16 @@ namespace TP2_Espinola
 {
     public partial class frmArticulo : Form
     {
+        CodigoDescripcionNegocio codDesc;
+        private Articulo articuloLocal = null;
         public frmArticulo()
         {
             InitializeComponent();
+        }
+        public frmArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            articuloLocal = articulo;
         }
 
 
@@ -47,11 +54,11 @@ namespace TP2_Espinola
                 nuevoArt.Descripcion = txtDescripcion.Text;
                 nuevoArt.Precio = int.Parse(txtPrecio.Text);
                 nuevoArt.Marca = new CodigoDescripcion();
-                nuevoArt.Marca.Id = cbxMarca.SelectedIndex;
-                nuevoArt.Marca.Descripcion = cbxMarca.SelectedText;
+                nuevoArt.Marca.Id = ((CodigoDescripcion)cbxMarca.SelectedItem).Id;
+                nuevoArt.Marca.Descripcion = ((CodigoDescripcion)cbxMarca.SelectedItem).Descripcion;
                 nuevoArt.Categoria = new CodigoDescripcion();
-                nuevoArt.Categoria.Id = cbxCategoria.SelectedIndex;
-                nuevoArt.Categoria.Descripcion = cbxCategoria.SelectedText;
+                nuevoArt.Categoria.Id = ((CodigoDescripcion)cbxCategoria.SelectedItem).Id;
+                nuevoArt.Categoria.Descripcion = ((CodigoDescripcion)cbxCategoria.SelectedItem).Descripcion;
                 nuevoArt.Imagen = "jpg";
 
                 negocio.agregarArticulo(nuevoArt); 
@@ -59,6 +66,33 @@ namespace TP2_Espinola
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            Close();
+        }
+
+        private void frmArticulo_Load(object sender, EventArgs e)
+        {
+            codDesc = new CodigoDescripcionNegocio();
+            try
+            {
+                cbxCategoria.DataSource = codDesc.listarCodigoDescripcion("Categorias");
+                cbxCategoria.SelectedIndex = -1;
+                cbxMarca.DataSource = codDesc.listarCodigoDescripcion("Marcas");
+                cbxMarca.SelectedIndex = -1;
+                if(articuloLocal != null)
+                {
+                    txtCodigo.Text = articuloLocal.Codigo;
+                    txtDescripcion.Text = articuloLocal.Descripcion;
+                    txtNombre.Text = articuloLocal.Nombre;
+                    txtPrecio.Text = articuloLocal.Precio.ToString();
+                    cbxCategoria.SelectedIndex = cbxCategoria.Items.IndexOf(articuloLocal.Categoria.Id);
+                    //cbxMarca.SelectedText = articuloLocal.Marca.Descripcion;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }

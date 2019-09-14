@@ -226,6 +226,7 @@
             this.Controls.Add(this.txtCodigo);
             this.Name = "frmArticulo";
             this.Text = "frmArticulo";
+            this.Load += new System.EventHandler(this.frmArticulo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
