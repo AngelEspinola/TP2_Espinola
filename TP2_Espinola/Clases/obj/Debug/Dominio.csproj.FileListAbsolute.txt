@@ -1,0 +1,6 @@
+C:\Proyectos\Proyectos [GIT]\TP2_Espinola\TP2_Espinola\Clases\bin\Debug\Clases.dll
+C:\Proyectos\Proyectos [GIT]\TP2_Espinola\TP2_Espinola\Clases\bin\Debug\Clases.pdb
+C:\Proyectos\Proyectos [GIT]\TP2_Espinola\TP2_Espinola\Clases\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Proyectos\Proyectos [GIT]\TP2_Espinola\TP2_Espinola\Clases\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Proyectos\Proyectos [GIT]\TP2_Espinola\TP2_Espinola\Clases\obj\Debug\Clases.dll
+C:\Proyectos\Proyectos [GIT]\TP2_Espinola\TP2_Espinola\Clases\obj\Debug\Clases.pdb

@@ -41,34 +41,7 @@ namespace TP2_Espinola
             cbxCategoria.SelectedIndex = -1;
             txtPrecio.Text = string.Empty;
         }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ArticuloNegocio negocio = new ArticuloNegocio();
-                Articulo nuevoArt = new Articulo();
-
-                nuevoArt.Codigo = txtCodigo.Text;
-                nuevoArt.Nombre = txtNombre.Text;
-                nuevoArt.Descripcion = txtDescripcion.Text;
-                nuevoArt.Precio = int.Parse(txtPrecio.Text);
-                nuevoArt.Marca = new CodigoDescripcion();
-                nuevoArt.Marca.Id = ((CodigoDescripcion)cbxMarca.SelectedItem).Id;
-                nuevoArt.Marca.Descripcion = ((CodigoDescripcion)cbxMarca.SelectedItem).Descripcion;
-                nuevoArt.Categoria = new CodigoDescripcion();
-                nuevoArt.Categoria.Id = ((CodigoDescripcion)cbxCategoria.SelectedItem).Id;
-                nuevoArt.Categoria.Descripcion = ((CodigoDescripcion)cbxCategoria.SelectedItem).Descripcion;
-                nuevoArt.Imagen = "jpg";
-
-                negocio.agregarArticulo(nuevoArt); 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            Close();
-        }
+        
 
         private void frmArticulo_Load(object sender, EventArgs e)
         {
@@ -85,7 +58,8 @@ namespace TP2_Espinola
                     txtDescripcion.Text = articuloLocal.Descripcion;
                     txtNombre.Text = articuloLocal.Nombre;
                     txtPrecio.Text = articuloLocal.Precio.ToString();
-                    cbxCategoria.SelectedIndex = cbxCategoria.Items.IndexOf(articuloLocal.Categoria.Id);
+                    cbxCategoria.SelectedIndex = cbxCategoria.FindString(articuloLocal.Categoria.Descripcion);
+                    cbxMarca.SelectedIndex = cbxMarca.FindString(articuloLocal.Marca.Descripcion);
                     //cbxMarca.SelectedText = articuloLocal.Marca.Descripcion;
                 }
             }
@@ -94,6 +68,45 @@ namespace TP2_Espinola
 
                 throw;
             }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ArticuloNegocio negocio = new ArticuloNegocio();
+
+                if(articuloLocal == null)
+                {
+                    articuloLocal = new Articulo();
+                }
+
+                articuloLocal.Codigo = txtCodigo.Text;
+                articuloLocal.Nombre = txtNombre.Text;
+                articuloLocal.Descripcion = txtDescripcion.Text;
+                articuloLocal.Precio = float.Parse(txtPrecio.Text);
+                articuloLocal.Marca = new CodigoDescripcion();
+                articuloLocal.Marca.Id = ((CodigoDescripcion)cbxMarca.SelectedItem).Id;
+                articuloLocal.Marca.Descripcion = ((CodigoDescripcion)cbxMarca.SelectedItem).Descripcion;
+                articuloLocal.Categoria = new CodigoDescripcion();
+                articuloLocal.Categoria.Id = ((CodigoDescripcion)cbxCategoria.SelectedItem).Id;
+                articuloLocal.Categoria.Descripcion = ((CodigoDescripcion)cbxCategoria.SelectedItem).Descripcion;
+                articuloLocal.Imagen = "jpg";
+
+                if (articuloLocal.Id != 0)
+                {
+                    negocio.modificarArticulo(articuloLocal);
+                }
+                else
+                {
+                    negocio.agregarArticulo(articuloLocal);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            Close();
         }
     }
 }

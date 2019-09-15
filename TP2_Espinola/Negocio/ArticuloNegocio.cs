@@ -35,12 +35,6 @@ namespace Negocio
                     articulo = new Articulo();
                     articulo.Id = (int)lector["Id"];
 
-                    //MSF-20190420: acá manejamos un posible nulo desde la DB. Recuerdan que la otra vez nos falló?
-                    //Era porque en la DB estaba nulo y acá lo queríamos tomar y no le gustaba.
-                    //Ojo... en la tabla no todas las columnas van a ser nuleables... en nuestro caso porque no le dimos
-                    //importancia casi al diseño de la misma. Pero si está bien armada la tabla, serán pocas las columnas
-                    //que sean nulleables. Solo a esa deberían agregarles ésta validación. Que de hecho pueden meter en un método
-                    //para no tener que escribirla completa cada vez, por ejemplo.
                     if (!Convert.IsDBNull(lector["Codigo"]))
                         articulo.Codigo = (string)lector["Codigo"];
 
@@ -59,6 +53,9 @@ namespace Negocio
                         articulo.Categoria = new CodigoDescripcion();
                         articulo.Categoria.Id = (int)lector["IdCategoria"];
                         articulo.Categoria.Descripcion = (string)lector["Categoria"];
+
+                    if (!Convert.IsDBNull(lector["Precio"]))
+                        articulo.Precio = float.Parse(lector["Precio"].ToString());
 
                     listado.Add(articulo);
                 }
@@ -104,30 +101,47 @@ namespace Negocio
             }
         }
 
-        //public void modificarHeroe(Heroe modificar)
-        //{
-        //    AccesoDatosManager accesoDatos = new AccesoDatosManager();
-        //    try
-        //    {
-        //        accesoDatos.setearConsulta("update PERSONAJES Set Nombre=@Nombre, Debilidad=@Debilidad, UsaCapa=@UC, Volador=@Vol, IdUniverso=@IdUni Where Id=" + modificar.Id.ToString());
-        //        accesoDatos.Comando.Parameters.Clear();
-        //        accesoDatos.Comando.Parameters.AddWithValue("@Nombre", modificar.Nombre);
-        //        accesoDatos.Comando.Parameters.AddWithValue("@Debilidad", modificar.Debilidad);
-        //        accesoDatos.Comando.Parameters.AddWithValue("@UC", modificar.UsaCapa);
-        //        accesoDatos.Comando.Parameters.AddWithValue("@Vol", modificar.Volador);
-        //        accesoDatos.Comando.Parameters.AddWithValue("@IdUni", modificar.Universo.Id);
-        //        accesoDatos.abrirConexion();
-        //        accesoDatos.ejecutarAccion();
+        public void modificarArticulo(Articulo articulo)
+        {
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
+            try
+            {
+                accesoDatos.setearConsulta("update ARTICULOS Set Codigo=@Codigo, Nombre=@Nombre, Descripcion=@Descripcion, IdMarca=@IdMarca, IdCategoria=@IdCategoria, Precio=@Precio Where Id=" + articulo.Id.ToString());
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.Comando.Parameters.AddWithValue("@Codigo", articulo.Codigo);
+                accesoDatos.Comando.Parameters.AddWithValue("@Nombre", articulo.Nombre);
+                accesoDatos.Comando.Parameters.AddWithValue("@Descripcion", articulo.Descripcion);
+                accesoDatos.Comando.Parameters.AddWithValue("@IdMarca", articulo.Marca.Id);
+                accesoDatos.Comando.Parameters.AddWithValue("@IdCategoria", articulo.Categoria.Id);
+                accesoDatos.Comando.Parameters.AddWithValue("@Precio", articulo.Precio);
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        accesoDatos.cerrarConexion();
-        //    }
-        //}
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+        
+        public void eliminarArticulo (int id)
+        {
+            AccesoDatosManager datos = new AccesoDatosManager();
+            try
+            {
+                datos.abrirConexion();
+                datos.setearConsulta("delete from ARTICULOS where id =" + id);
+                datos.ejecutarAccion();
+                datos.cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
