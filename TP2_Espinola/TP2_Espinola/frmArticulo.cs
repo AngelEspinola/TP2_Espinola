@@ -84,7 +84,7 @@ namespace TP2_Espinola
                 articuloLocal.Codigo = txtCodigo.Text;
                 articuloLocal.Nombre = txtNombre.Text;
                 articuloLocal.Descripcion = txtDescripcion.Text;
-                articuloLocal.Precio = float.Parse(txtPrecio.Text);
+                articuloLocal.Precio = decimal.Parse(txtPrecio.Text);
                 articuloLocal.Marca = new CodigoDescripcion();
                 articuloLocal.Marca.Id = ((CodigoDescripcion)cbxMarca.SelectedItem).Id;
                 articuloLocal.Marca.Descripcion = ((CodigoDescripcion)cbxMarca.SelectedItem).Descripcion;

@@ -43,7 +43,8 @@ namespace TP2_Espinola
         {
             cargarGrilla();
             filtrarGrilla();
-        }
+
+        }   
         private void cargarGrilla()
         {
             ArticuloNegocio articulos = new ArticuloNegocio();
@@ -52,8 +53,8 @@ namespace TP2_Espinola
                 listaArticulos = articulos.listarArticulos();
                 dgv_listaArticulos.DataSource = articulos.listarArticulos();
                 dgv_listaArticulos.Columns[0].Visible = false;
+                dgv_listaArticulos.Columns[6].Visible = false;
 
-                //.Columns[5].Visible = false;
                 //.Columns[5].Visible = false;
             }
             catch (Exception ex)

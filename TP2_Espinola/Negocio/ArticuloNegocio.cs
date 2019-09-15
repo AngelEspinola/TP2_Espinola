@@ -55,8 +55,10 @@ namespace Negocio
                         articulo.Categoria.Descripcion = (string)lector["Categoria"];
 
                     if (!Convert.IsDBNull(lector["Precio"]))
-                        articulo.Precio = float.Parse(lector["Precio"].ToString());
-
+                    {
+                        articulo.Precio = decimal.Round((decimal)lector["Precio"],2);
+                    }
+                    
                     listado.Add(articulo);
                 }
 
@@ -75,20 +77,32 @@ namespace Negocio
 
         public void agregarArticulo(Articulo nuevo)
         {
+            AccesoDatosManager accesoDatos = new AccesoDatosManager();
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
             try
             {
-                conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
-                comando.CommandType = System.Data.CommandType.Text;
-                //MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
-                comando.CommandText = "insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) values";
-                comando.CommandText += "('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', " +
-                    nuevo.Marca.Id + "," + nuevo.Categoria.Id + "," + nuevo.Precio + ")";
-                comando.Connection = conexion;
-                conexion.Open();
+                //conexion.ConnectionString = AccesoDatosManager.cadenaConexion;
+                //comando.CommandType = System.Data.CommandType.Text;
+                ////MSF-20190420: le agregué todas las columnas. Teniendo en cuenta inclusive lo que elegimos en el combo de selección..
+                //comando.CommandText = "insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) values";
+                //comando.CommandText += "('" + nuevo.Codigo + "', '" + nuevo.Nombre + "', '" + nuevo.Descripcion + "', " +
+                //    nuevo.Marca.Id + "," + nuevo.Categoria.Id + ", @Precio)";
+                //comando.Parameters.AddWithValue("@Precio", nuevo.Precio);
+                //comando.Connection = conexion;
+                //conexion.Open();
 
-                comando.ExecuteNonQuery();
+                accesoDatos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio, Imagen) values (@Codigo, @Nombre, @Descripcion, @IdMarca, @IdCategoria, @Precio, @Imagen)");
+                accesoDatos.Comando.Parameters.Clear();
+                accesoDatos.Comando.Parameters.AddWithValue("@Codigo", nuevo.Codigo);
+                accesoDatos.Comando.Parameters.AddWithValue("@Nombre", nuevo.Nombre);
+                accesoDatos.Comando.Parameters.AddWithValue("@Descripcion", nuevo.Descripcion);
+                accesoDatos.Comando.Parameters.AddWithValue("@IdMarca", nuevo.Marca.Id);
+                accesoDatos.Comando.Parameters.AddWithValue("@IdCategoria", nuevo.Categoria.Id);
+                accesoDatos.Comando.Parameters.AddWithValue("@Precio", nuevo.Precio);
+                accesoDatos.Comando.Parameters.AddWithValue("@Imagen", nuevo.Imagen);
+                accesoDatos.abrirConexion();
+                accesoDatos.ejecutarAccion();
 
             }
             catch (Exception ex)
@@ -97,7 +111,7 @@ namespace Negocio
             }
             finally
             {
-                conexion.Close();
+                accesoDatos.cerrarConexion();
             }
         }
 
